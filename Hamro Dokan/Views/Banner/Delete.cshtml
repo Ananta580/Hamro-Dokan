@@ -1,0 +1,53 @@
+﻿@model Hamro_dokan.Models.tblBanner
+
+@{
+    ViewBag.Title = "Delete";
+}<br />
+
+ <div>
+     <h3>Are you sure you want to delete Banner:(@Model.Header)</h3>
+     <dl class="dl-horizontal">
+         <dt>
+             @Html.DisplayNameFor(model => model.BannerId)
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.BannerId)
+         </dd>
+
+         <dt>
+             @Html.DisplayNameFor(model => model.Header)
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.Header)
+         </dd>
+
+         <dt>
+             @Html.DisplayNameFor(model => model.Caption)
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.Caption)
+         </dd>
+
+         <dt>
+             @Html.DisplayNameFor(model => model.Path)
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.Path)
+         </dd>
+
+     </dl>
+
+     @using (Html.BeginForm())
+     {
+         @Html.AntiForgeryToken()
+
+         <div class="form-actions no-color">
+             <input type="submit" value="Delete" class="primary-btn" style="background-color:red" /> |
+             @Html.ActionLink("Back to List", "Index")
+         </div>
+     }
+ </div>

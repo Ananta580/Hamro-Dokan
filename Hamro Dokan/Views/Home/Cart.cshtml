@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblCart>
+
+@{
+    ViewBag.Title = "Cart";
+}
+<div class="col-md-12">
+    <div class="order-summary clearfix">
+        <div class="section-title">
+            <h3 class="title">YOUR CART</h3>
+        </div>
+        <table class="shopping-cart-table table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-right">Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td class="thumb">
+                        @if (item.tblProduct.CategoryId == 1)
+                        {
+                            <img src="~/Images/Products/Mobile/@item.tblProduct.Img" height="100" width="150" />
+                        }
+                        @if (item.tblProduct.CategoryId == 2)
+                        {
+                            <img src="~/Images/Products/Pant/@item.tblProduct.Img" height="100" width="150" />
+                        }
+                        @if (item.tblProduct.CategoryId == 3)
+                        {
+                            <img src="~/Images/Products/Tshirt/@item.tblProduct.Img" height="100" width="150" />
+                        }
+                    </td>
+                    <td class="details">
+                        <a href="#">@item.tblProduct.ProductName</a>
+
+                    </td>
+                    <td class="price text-center"><strong>@item.tblProduct.Price</strong><br></td>
+                    
+                    <td class="text-right">
+                        @Html.ActionLink("Delete", "DeleteCart", new { id = item.CartId })
+                    </td>
+                    @*<button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>*@
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th class="empty" colspan="3"></th>
+                    <th>TOTAL</th>
+                    <th colspan="2" class="total">
+                        @{decimal price = 0; }
+                        @foreach (var item in Model)
+                        {
+
+                           price  +=Convert.ToInt32( item.tblProduct.Price);
+                        }
+                        @price
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="pull-right">
+            <button class="primary-btn">Place Order</button>
+        </div>
+    </div>
+
+</div>

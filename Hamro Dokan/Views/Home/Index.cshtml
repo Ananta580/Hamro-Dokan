@@ -1,0 +1,166 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblProduct>
+@{
+    ViewBag.Title = "Home Page";
+}
+@section Banner
+    {
+    @Html.Action("_Slider", "Home")
+}
+<!-- section -->
+<!-- container -->
+<br />
+<div class="row">
+    <!-- section-title -->
+    <div class="col-md-12">
+        <div class="section-title">
+            <h2 class="title">Deals Of The Day</h2>
+            <div class="pull-right">
+                <div class="product-slick-dots-1 custom-dots"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /section-title -->
+    <!-- banner -->
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="banner banner-2">
+            <img src="~/Images/Untitled-1.jpg" />
+            <div class="banner-caption">
+                <h2 class="white-color">NEW<br>COLLECTION</h2>
+                <button class="primary-btn">Shop Now</button>
+            </div>
+        </div>
+    </div>
+    <!-- /banner -->
+    <!-- Product Slick -->
+    <div class="col-md-9 col-sm-6 col-xs-6">
+        <div class="row">
+            <div id="product-slick-1" class="product-slick">
+                <!-- Product Single -->
+                @foreach (var item in Model)
+                {
+
+                    if (item.Brand == "Vivo" || item.Brand == "Xiaomi" || item.Brand == "OnePlus")
+                    {
+                        <!-- Product Single -->
+                        <div class="col-md-3 col-sm-5 col-xs-6">
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                    </div>
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> @Html.ActionLink("Quick Access", "Detail", "Store", new { id = item.ProductId }, new { @class = "" })</button>
+                                    <img src="~/Images/Products/Mobile/@item.Img">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">Rs.@item.Price</h3>
+
+                                    <h2 class="product-name"> @Html.ActionLink(item.ProductName, "Detail", "Store", new { id = @item.ProductId }, new { @class = "product-name" })</h2>
+                                    <div class="product-btns">
+                                        @Html.ActionLink("Add to Cart", "AddToCart", "Home", new { id = item.ProductId }, new { @class = "primary-btn add-to-cart" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                }
+
+            </div>
+        </div>
+    </div>
+    <!-- /Product Slick -->
+</div>
+<!-- row -->
+<div class="row">
+    <!-- section title -->
+    <div class="col-md-12">
+        <div class="section-title">
+            <h2 class="title">Latest Products</h2>
+            <div class="pull-right">
+                <div class="product-slick-dots-2 custom-dots">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section title -->
+    <!-- Product Single -->
+    @foreach (var item in Model)
+    {
+
+        if (item.Brand == "Nokia" || item.Brand == "Chinos" || item.Brand == "Vitu" || item.Brand == "Nykaa" || item.Brand == "Panasonic" || item.Brand == "Nykpra")
+        {
+            <!-- Product Single -->
+            <div class="col-md-3 col-sm-5 col-xs-6">
+                <div class="product product-single">
+                    <div class="product-thumb">
+                        <div class="product-label">
+                        </div>
+                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> @Html.ActionLink("Quick Access", "Detail", "Store", new { id = item.ProductId }, new { @class = "" })</button>
+                        @if (item.CategoryId == 1)
+                        {
+                            <img src="~/Images/Products/Mobile/@item.Img">
+                        }
+                        @if (item.CategoryId == 2)
+                        {
+                            <img src="~/Images/Products/Pant/@item.Img">
+                        }
+                        @if (item.CategoryId == 3)
+                        {
+                            <img src="~/Images/Products/Tsirt/@item.Img">
+                        }
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-price">Rs.@item.Price</h3>
+
+                        <h2 class="product-name"> @Html.ActionLink(item.ProductName, "Detail", "Store", new { id = @item.ProductId }, new { @class = "product-name" })</h2>
+                        <div class="product-btns">
+                            @Html.ActionLink("Add to Cart", "AddToCart", "Home", new { id = item.ProductId }, new { @class = "primary-btn add-to-cart" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    }
+    <!-- /Product Single -->
+</div>
+<!-- /section -->
+<!-- section -->
+<div class="section section-grey">
+    <!-- container -->
+    <div class="container" style="padding-right: 0;
+padding-left: 0;
+margin-right: 0;
+margin-left: 0">
+        <!-- row -->
+        <div class="row"style="margin-right: 0px;
+margin-left: 0px;">
+            <!-- banner -->
+            <div class="col-md-8">
+                <div class="banner banner-1">
+                    <img src="~/Images/banner13.jpg" alt="">
+                    <div class="banner-caption text-center">
+                        <h1 class="primary-color">HOT DEAL<br><span style="color:cadetblue">Up to 50% OFF</span></h1>
+                        <button class="primary-btn"><a href="@Url.Action("Tshirt","Store")">TShirts</a></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /banner -->
+            <!-- banner -->
+            <div class="col-md-4 col-sm-6">
+                <a class=" banner banner-2" href="@Url.Action("Mobile","Store")">
+                    <img src="~/Images/banner11.jpg" alt="">
+                    <div class="banner-caption text-center">
+                        <h2 class="white-color">NEW COLLECTION</h2>
+                    </div>
+                </a>
+            </div>
+            <!-- /banner -->
+            <!-- /banner -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->

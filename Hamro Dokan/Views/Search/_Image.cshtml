@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblProduct>
+
+@using (Html.BeginForm("Image", "Search", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input class="input" type="file" placeholder="Upload File" name="ad1file" required style="padding-left:0px;margin-right:20px" />
+    <input type="submit" class="primary-btn" value="upload" />
+
+}
+
+
+

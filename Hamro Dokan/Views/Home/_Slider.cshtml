@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblBanner>
+
+
+
+    <div id="home">
+
+        <div class="slick-track">
+
+            <div id="navigation">
+
+                <div id="home-slick">
+                    @foreach (var item in Model)
+                    {
+                        <div class="banner banner-1 ">
+                            <img src="~/Images/Banners/@item.Path" alt="">
+                            <div class="banner-caption text-center">
+                                <h1>@item.Header</h1>
+                                <h3 class="white-color font-weak" style="color:cadetblue">@item.Caption</h3>
+                                <button class="primary-btn">Shop Now</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+

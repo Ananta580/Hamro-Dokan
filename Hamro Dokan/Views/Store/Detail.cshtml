@@ -1,0 +1,62 @@
+﻿@model Hamro_dokan.Models.tblProduct
+@{
+    ViewBag.Title = "Detail";
+}
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!--  Product Details -->
+            <div class="product product-details clearfix">
+                <div class="col-md-6">
+                    <div id="product-main-view">
+                        <div class="product-view">
+                            @if (Model.CategoryId == 4)
+                            {
+                                <img src="~/Images/Products/Kurtha/@Model.Img">
+                            }
+                            @if (Model.CategoryId == 1)
+                            {
+                                <img src="~/Images/Products/Mobile/@Model.Img">
+                            }
+                            @if (Model.CategoryId == 2)
+                            {
+                                <img src="~/Images/Products/Pant/@Model.Img">
+                            }
+                            @if (Model.CategoryId == 3)
+                            {
+                                <img src="~/Images/Products/Tshirt/@Model.Img">
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="product-body">
+                        <div class="product-label">
+                        </div>
+                        <h2 class="product-name">@Model.ProductName</h2>
+                        <h3 class="product-price">
+                            Rs.@Model.Price
+                        </h3>
+                        <p><strong>Category:</strong>@Model.tblCategory.CategoryName</p>
+                        <p><strong>Brand:</strong>@Model.Brand</p>
+                        <p>
+                            @Model.Description
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="product-btns">
+                    @Html.ActionLink("Add to Cart", "AddToCart", "Home", new { id = Model.ProductId }, new { @class = "primary-btn add-to-cart" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

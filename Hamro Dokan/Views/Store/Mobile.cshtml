@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblProduct>
+@{
+                /**/
+
+                ViewBag.Title = "Mobile";
+}
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- MAIN -->
+            <div id="main" class="col-md-12">
+
+                <!-- STORE -->
+                <div id="store">
+                    <!-- row -->
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            if (item.CategoryId == 1)
+                            {
+                                <!-- Product Single -->
+                                <div class="col-md-4 col-sm-6 col-xs-6">
+                                    <div class="product product-single">
+                                        <div class="product-thumb">
+                                            <div class="product-label">
+                                            </div>
+                                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> @Html.ActionLink("Quick Access", "Detail", "Store", new { id = item.ProductId }, new { @class = "" })</button>
+                                            <img src="~/Images/Products/Mobile/@item.Img">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">Rs.@item.Price</h3>
+
+                                            <h2 class="product-name"> @Html.ActionLink(item.ProductName, "Detail", "Store", new { id = item.ProductId }, new { @class = "product-name" })</h2>
+                                            <div class="product-btns">
+                                                @Html.ActionLink("Add to Cart", "AddToCart", "Home", new { id = item.ProductId }, new { @class = "primary-btn add-to-cart" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        <!-- /Product Single -->
+                        <!-- Product Single -->
+                        <!-- /row -->
+                    </div>
+                    <!-- /STORE -->
+                </div>
+                <!-- /MAIN -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+</div>
+

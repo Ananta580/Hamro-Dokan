@@ -1,0 +1,55 @@
+﻿@model Hamro_dokan.Models.tblCart
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<h3>Are you sure you want to delete <strong style="color:coral">FROM CART</strong></h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProduct.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblProduct.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProduct.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblProduct.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProduct.Img)
+        </dt>
+
+        <dd>
+            @if (Model.tblProduct.CategoryId == 1)
+            {
+                <img src="~/Images/Products/Mobile/@Model.tblProduct.Img" height="100" width="100" />
+            }
+            @if (Model.tblProduct.CategoryId == 2)
+            {
+                <img src="~/Images/Products/Pant/@Model.tblProduct.Img" height="100" width="100" />
+            }
+            @if (Model.tblProduct.CategoryId == 3)
+            {
+                <img src="~/Images/Products/Tshirt/@Model.tblProduct.Img" height="100" width="100" />
+            }
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="primary-btn" style="background-color:red" /> |
+            @Html.ActionLink("Back to List", "Cart")
+        </div>
+    }
+</div>

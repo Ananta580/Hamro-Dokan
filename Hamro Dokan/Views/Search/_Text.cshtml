@@ -1,0 +1,9 @@
+﻿
+@model IEnumerable<Hamro_dokan.Models.tblProduct>
+@using (Html.BeginForm("Text", "Search", FormMethod.Post))
+{
+
+    @Html.TextBox("searching", null, new { @class = "input" })
+<input type="submit" class="primary-btn" style="margin:auto" value="search" />
+
+}

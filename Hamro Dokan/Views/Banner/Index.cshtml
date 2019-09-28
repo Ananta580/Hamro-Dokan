@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Hamro_dokan.Models.tblBanner>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <br />
+<p>
+    @Html.ActionLink("Add New Banner", "Create",null,new { @class = "primary-btn" })
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Caption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Path)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Header)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caption)
+        </td>
+        <td>
+            <img src="~/Images/Banners/@item.Path" height="100" width="100"/>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BannerId },new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.BannerId  },new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

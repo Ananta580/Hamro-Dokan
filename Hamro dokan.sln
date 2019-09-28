@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hamro dokan", "Hamro dokan\Hamro dokan.csproj", "{5149853F-F21F-4CBE-94BB-42501A1E2C51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5149853F-F21F-4CBE-94BB-42501A1E2C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5149853F-F21F-4CBE-94BB-42501A1E2C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5149853F-F21F-4CBE-94BB-42501A1E2C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5149853F-F21F-4CBE-94BB-42501A1E2C51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE8DA7BA-928E-4325-AEA6-7AC4C61DBC13}
+	EndGlobalSection
+EndGlobal

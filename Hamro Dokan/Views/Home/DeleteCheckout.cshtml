@@ -1,0 +1,19 @@
+﻿@model Hamro_dokan.Models.tblCart
+
+@{
+    ViewBag.Title = "DeleteCheckout";
+}
+
+<h2>DeleteCheckout</h2>
+
+<h3>Your Item Will Be Delivered Soon</h3>
+<div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="OK" class="primary-btn" />
+        </div>
+    }
+</div>

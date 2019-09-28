@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5149853F-F21F-4CBE-94BB-42501A1E2C51}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hamro_dokan</RootNamespace>
+    <AssemblyName>Hamro dokan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44382</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblBanner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProduct.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\Checkout.cs" />
+    <Compile Include="Models\vw_Everything.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\nouislider.min.css" />
+    <Content Include="css\slick-theme.css" />
+    <Content Include="css\slick.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\slick.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\slick.eot" />
+    <Content Include="fonts\slick.ttf" />
+    <Content Include="fonts\slick.woff" />
+    <Content Include="ImageClassificationWithRandomForest1\Classifier.py" />
+    <Content Include="ImageClassificationWithRandomForest1\Classifytrainer.py" />
+    <Content Include="ImageClassificationWithRandomForest1\cropper.py" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\1.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\10.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\100.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\101.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\102.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\103.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\104.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\105.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\106.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\107.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\108.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\109.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\11.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\110.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\111.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\112.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\113.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\114.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\115.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\116.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\117.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\118.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\119.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\12.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\120.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\121.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\122.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\123.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\124.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\125.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\126.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\127.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\128.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\129.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\13.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\130.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\131.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\132.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\133.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\134.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\135.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\136.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\137.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\138.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\139.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\14.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\140.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\141.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\142.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\143.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\144.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\145.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\146.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\147.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\148.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\149.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\15.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\150.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\16.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\17.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\18.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\19.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\20.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\21.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\22.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\23.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\24.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\25.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\26.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\27.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\28.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\29.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\3.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\30.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\31.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\32.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\33.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\34.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\35.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\36.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\37.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\38.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\39.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\4.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\40.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\41.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\42.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\43.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\44.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\45.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\46.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\47.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\48.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\49.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\5.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\50.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\51.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\52.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\53.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\54.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\55.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\56.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\57.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\58.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\59.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\6.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\60.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\61.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\62.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\63.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\64.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\65.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\66.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\67.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\68.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\69.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\7.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\70.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\71.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\72.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\73.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\74.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\75.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\76.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\77.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\78.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\79.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\8.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\80.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\81.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\82.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\83.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\84.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\85.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\86.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\87.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\88.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\89.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\9.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\90.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\91.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\92.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\93.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\94.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\95.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\96.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\97.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\98.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\1\99.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\1.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\10.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\100.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\101.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\102.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\103.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\104.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\105.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\106.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\107.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\108.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\109.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\11.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\110.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\111.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\112.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\113.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\114.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\115.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\116.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\117.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\118.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\119.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\12.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\120.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\121.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\122.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\123.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\124.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\125.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\126.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\127.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\128.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\129.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\13.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\130.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\131.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\132.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\133.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\134.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\135.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\136.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\137.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\138.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\139.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\14.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\140.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\141.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\142.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\143.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\144.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\145.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\146.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\147.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\148.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\149.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\15.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\150.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\16.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\17.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\18.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\19.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\20.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\21.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\22.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\23.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\24.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\25.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\26.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\27.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\28.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\29.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\3.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\30.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\31.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\32.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\33.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\34.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\35.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\36.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\37.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\38.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\39.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\4.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\40.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\41.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\42.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\43.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\44.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\45.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\46.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\47.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\48.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\49.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\5.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\50.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\51.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\52.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\53.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\54.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\55.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\56.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\57.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\58.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\59.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\6.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\60.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\61.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\62.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\63.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\64.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\65.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\66.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\67.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\68.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\69.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\7.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\70.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\71.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\72.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\73.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\74.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\75.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\76.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\77.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\78.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\79.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\8.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\80.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\81.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\82.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\83.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\84.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\85.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\86.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\87.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\88.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\89.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\9.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\90.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\91.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\92.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\93.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\94.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\95.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\96.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\97.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\Images\2\98.jpg" />
+    <Content Include="ImageClassificationWithRandomForest1\main.py" />
+    <Content Include="ImageClassificationWithRandomForest1\train11.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Classifier.py" />
+    <Content Include="ImageClassificationWithRandomForest\cropper.py" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train10.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train11.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train110.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train111.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train112.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train113.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train114.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train115.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train116.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train117.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train118.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train119.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train12.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train13.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train14.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train15.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train16.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train17.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train18.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Mobiles\train19.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train20.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train21.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train210.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train211.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train212.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train213.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train214.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train215.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train216.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train217.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train218.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train219.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train22.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train23.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train24.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train25.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train26.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train27.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train28.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Pants\train29.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\mob1.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\mob2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\off.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\slider2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\slider3.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\tshirt1.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\Slider\tshirt2.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train30.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train31.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train310.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train311.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train312.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train313.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train314.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train315.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train316.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train317.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train318.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train319.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train32.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train33.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train34.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train35.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train36.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train37.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train38.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\Images\TShirts\train39.jpg" />
+    <Content Include="ImageClassificationWithRandomForest\main.py" />
+    <Content Include="ImageClassificationWithRandomForest\train11.jpg" />
+    <Content Include="Images\banner11.jpg" />
+    <Content Include="Images\banner13.jpg" />
+    <Content Include="Images\banner12.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Products\Kurtha\Untitled-1.jpg" />
+    <Content Include="Images\Products\Mobile\cassa.jpg" />
+    <Content Include="Images\Products\Mobile\dsv.jpg" />
+    <Content Include="Images\Products\Mobile\dvf.jpg" />
+    <Content Include="Images\Products\Mobile\fgd.jpg" />
+    <Content Include="Images\Products\Mobile\images.jpg" />
+    <Content Include="Images\Products\Mobile\indesddsx.jpg" />
+    <Content Include="Images\Products\Mobile\index.jpg" />
+    <Content Include="Images\Products\Mobile\sacdsds.jpg" />
+    <Content Include="Images\Products\Mobile\sdf.jpg" />
+    <Content Include="Images\Products\Mobile\sdfdfd.jpg" />
+    <Content Include="Images\Products\Mobile\sdffd.jpg" />
+    <Content Include="Images\Products\Mobile\sfd.jpg" />
+    <Content Include="Images\Products\Mobile\sffd.jpg" />
+    <Content Include="Images\Products\Pant\train21.jpg" />
+    <Content Include="Images\Products\Pant\train210.jpg" />
+    <Content Include="Images\Products\Pant\train211.jpg" />
+    <Content Include="Images\Products\Pant\train212.jpg" />
+    <Content Include="Images\Products\Pant\train213.jpg" />
+    <Content Include="Images\Products\Pant\train214.jpg" />
+    <Content Include="Images\Products\Pant\train215.jpg" />
+    <Content Include="Images\Products\Pant\train216.jpg" />
+    <Content Include="Images\Products\Pant\train217.jpg" />
+    <Content Include="Images\Products\Pant\train218.jpg" />
+    <Content Include="Images\Products\Pant\train219.jpg" />
+    <Content Include="Images\Products\Pant\train22.jpg" />
+    <Content Include="Images\Products\Pant\train23.jpg" />
+    <Content Include="Images\Products\Pant\train24.jpg" />
+    <Content Include="Images\Products\Pant\train25.jpg" />
+    <Content Include="Images\Products\Pant\train26.jpg" />
+    <Content Include="Images\Products\Pant\train27.jpg" />
+    <Content Include="Images\Products\Pant\train28.jpg" />
+    <Content Include="Images\Products\Pant\train29.jpg" />
+    <Content Include="Images\Products\Tshirt\train30.jpg" />
+    <Content Include="Images\Products\Tshirt\train31.jpg" />
+    <Content Include="Images\Products\Tshirt\train310.jpg" />
+    <Content Include="Images\Products\Tshirt\train311.jpg" />
+    <Content Include="Images\Products\Tshirt\train312.jpg" />
+    <Content Include="Images\Products\Tshirt\train313.jpg" />
+    <Content Include="Images\Products\Tshirt\train314.jpg" />
+    <Content Include="Images\Products\Tshirt\train315.jpg" />
+    <Content Include="Images\Products\Tshirt\train316.jpg" />
+    <Content Include="Images\Products\Tshirt\train317.jpg" />
+    <Content Include="Images\Products\Tshirt\train318.jpg" />
+    <Content Include="Images\Products\Tshirt\train32.jpg" />
+    <Content Include="Images\Products\Tshirt\train33.jpg" />
+    <Content Include="Images\Products\Tshirt\train34.jpg" />
+    <Content Include="Images\Products\Tshirt\train35.jpg" />
+    <Content Include="Images\Products\Tshirt\train36.jpg" />
+    <Content Include="Images\Products\Tshirt\train37.jpg" />
+    <Content Include="Images\Products\Tshirt\train38.jpg" />
+    <Content Include="Images\SmallLogo.png" />
+    <Content Include="Images\Untitled-1.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.zoom.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\nouislider.min.js" />
+    <Content Include="js\slick.min.js" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="TextFile1.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\hooks\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\info\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\logs\refs\heads\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\logs\refs\remotes\origin\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\objects\info\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\objects\pack\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\refs\heads\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\refs\remotes\origin\" />
+    <Folder Include="ImageClassificationWithRandomForest1\.git\refs\tags\" />
+    <Folder Include="Images\3\" />
+    <Folder Include="Images\Banners\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ImageClassificationWithRandomForest\.vscode\launch.json" />
+    <Content Include="ImageClassificationWithRandomForest\.vs\ImageClassificationWithRandomForest\v16\.suo" />
+    <Content Include="ImageClassificationWithRandomForest\.vs\ProjectSettings.json" />
+    <Content Include="ImageClassificationWithRandomForest\.vs\slnx.sqlite" />
+    <Content Include="ImageClassificationWithRandomForest\.vs\VSWorkspaceState.json" />
+    <Content Include="ImageClassificationWithRandomForest\unknown.csv" />
+    <Content Include="ImageClassificationWithRandomForest\__pycache__\Classifier.cpython-37.pyc" />
+    <Content Include="ImageClassificationWithRandomForest\__pycache__\cropper.cpython-37.pyc" />
+    <Content Include="ImageClassificationWithRandomForest\Random_Tree.pkl" />
+    <Content Include="ImageClassificationWithRandomForest1\.vs\ImageClassificationWithRandomForest1\v16\.suo" />
+    <Content Include="ImageClassificationWithRandomForest1\.vs\ImageClassificationWithRandomForest\v16\.suo" />
+    <Content Include="ImageClassificationWithRandomForest1\.vs\ProjectSettings.json" />
+    <Content Include="ImageClassificationWithRandomForest1\.vs\slnx.sqlite" />
+    <Content Include="ImageClassificationWithRandomForest1\.vs\VSWorkspaceState.json" />
+    <Content Include="ImageClassificationWithRandomForest1\Classifier.pyc" />
+    <Content Include="ImageClassificationWithRandomForest1\cropper.pyc" />
+    <Content Include="ImageClassificationWithRandomForest1\Random_Tree.pkl" />
+    <Content Include="ImageClassificationWithRandomForest1\Testing1.csv" />
+    <Content Include="ImageClassificationWithRandomForest1\Training1.csv" />
+    <Content Include="ImageClassificationWithRandomForest1\Trees.pkl" />
+    <Content Include="ImageClassificationWithRandomForest1\unknown.csv" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\Home\Manager.cshtml" />
+    <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Banner\Create.cshtml" />
+    <Content Include="Views\Banner\Edit.cshtml" />
+    <Content Include="Views\Banner\Delete.cshtml" />
+    <Content Include="Views\Home\_Slider.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Store\Mobile.cshtml" />
+    <Content Include="Views\Store\Pant.cshtml" />
+    <Content Include="Views\Store\Tshirt.cshtml" />
+    <Content Include="Views\Store\Detail.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\DeleteCart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Text.cshtml" />
+    <Content Include="Views\Search\Image.cshtml" />
+    <Content Include="Views\Search\_Text.cshtml" />
+    <Content Include="Views\Search\_Image.cshtml" />
+    <Content Include="Views\Store\Kurtha.cshtml" />
+    <Content Include="Views\Home\DeleteCheckout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51292</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44382/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

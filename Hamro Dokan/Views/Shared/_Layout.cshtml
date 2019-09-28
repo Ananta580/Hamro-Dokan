@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HamroDokan</title>
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/css/style.css" />
+
+</head>
+<body style="background-color:cy">
+    <!-- HEADER -->
+    <header>
+        <!-- header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- Logo -->
+                    <div class="header-logo container-fluid">
+                        <a class="logo" href="@Url.Action("Index","Home")">
+                            <img src="~/Images/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-logo container-fluid">
+                    @*@Html.Partial("~/Views/Search/_Image.cshtml")*@
+                </div>
+                <div class="header-logo container-fluid">
+                    @*@Html.Partial("~/Views/Search/_Text.cshtml")*@
+                </div>
+                <div class="header-logo container-fluid pull-right" style="padding-top:30px">
+                    <!-- Account -->
+                    @Html.Partial("~/Views/Shared/_LoginPartial.cshtml")
+                    <!-- /Account -->
+                    <!-- Mobile nav toggle-->
+                </div>
+                    <ul>
+                    <li class="nav-toggle">
+                        <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+                    </li>
+                    <!-- / Mobile nav toggle -->
+                    </ul>
+                
+                    
+                    <!-- /Logo -->
+                    <!-- Search -->
+                    @*<div class="header-search">
+        @model IEnumerable<Hamro_dokan.Models.tblProduct>
+        @using (Html.BeginForm("TextSearch","Search",FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBox("searching")@*<input type="submit" value="" class="search-btn fa fa-search" />*@
+                    @*<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        }*@
+                    @*<input class="input search-input" type="text" placeholder="Enter your keyword">
+
+                <button class="search-btn"><i class="fa fa-search"></i></button>
+
+        </div>*@
+                    <!-- /Search -->
+                
+            </div>
+            </div>
+            <!-- header -->
+       
+        <!-- container -->
+    </header>
+    <!-- /HEADER -->
+    <!-- NAVIGATION -->
+    <div id="navigation">
+        <!-- container -->
+        <div class="container-fluid">
+            <div id="responsive-nav">
+
+                <!-- menu nav -->
+                <div class="menu-nav">
+                    <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                    <ul class="menu-list">
+
+                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="dropdown default-dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Product <i class="fa fa-caret-down"></i></a>
+                            <ul class="custom-menu">
+                                <li><a href="@Url.Action("Tshirt","Store")">TShirts</a></li>
+                                <li><a href="@Url.Action("Pant","Store")">Pants</a></li>
+                                <li><a href="@Url.Action("Mobile","Store")">Mobiles</a></li>
+                                <li><a href="@Url.Action("Kurtha","Store")">Kurthas</a></li>
+                            </ul>
+                        </li>
+
+                        @using Microsoft.AspNet.Identity
+                        @if (User.Identity.GetUserName() == "admin@hamrodokan.com")
+                        {
+                            <li><a href="@Url.Action("Manager","Home")">Manager</a></li>
+                        }
+
+                        @using Microsoft.AspNet.Identity
+                        @if (User.Identity.GetUserId()!= null)
+                        {
+                            <li><a href="@Url.Action("Checkout", "Home")">Checkout</a></li>
+                        }
+                        <li><a href="@Url.Action("Index","Search")">Search</a></li>
+                    </ul>
+                </div>
+                <!-- menu nav -->
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /NAVIGATION -->
+    <div class="container-fluid body-content" style="padding-left:0px;padding-right:0px;">
+
+        @RenderSection("Banner", required: false)
+        @RenderSection("Search", required: false)
+        @RenderSection("Manage", required: false)
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="pull-right">
+                <img src="~/Images/SmallLogo.png" alt="">
+            </div>
+            <p>&copy; @DateTime.Now.Year - Hamro Dokan </p>
+            <p>ContactUs:Hamrodokan@hm.com</p>
+            <p>CallUs:+977-1-876543</p>
+        </footer>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/nouislider.min.js"></script>
+    <script src="~/js/jquery.zoom.min.js"></script>
+    <script src="~/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
