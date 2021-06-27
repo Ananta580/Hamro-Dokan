@@ -1,2 +1,2 @@
 # Hamro-Dokan
-Online Shoping Site With Image Search. This Online site consist of Three category of clothes as Tshirt,Pant and Kurtha. Search facility is used to search for the product you want . Image search is used to categorize according to image of product
+Hamro Dokan is an ecommerce Website with Image Search Feature developed for learning purpose , where we learn to integrate python in c#. It was a simple E-commerce website yet powerful search was implemented using python image processing . This was a team project and 4 peoples were involved in making this possible .
